@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 ::获取当前文件所在的目录的绝对路径
 set "thispath=%~dp0"
 ::删除之后的路径分隔符号“\”

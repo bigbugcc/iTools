@@ -13,11 +13,9 @@ echo %mypath% > temp.txt
 find "%thispath%" temp.txt
 ::如果查找到则fin命令返回0,如果没有找到find命令返回1
 if %errorlevel% == 0 (
-	echo path环境变量中 已经包含了 当前路径%thispath%
-	echo 程序返回码:%errorlevel%
+	echo path环境变量中已存在 %thispath%  Code:%errorlevel%
 ) else (
-	echo path环境变量中 没有包含   当前路径%thispath%
-	echo 程序返回码:%errorlevel%
+	echo 正在添加到path环境变量中... 路径%thispath%  Code:%errorlevel%
 	::追加当前文件所在目录的路径到path环境变量中
 	setx /m "path" "%thispath%;%path%"
 )	
